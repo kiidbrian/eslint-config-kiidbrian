@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-kiidbrian",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ESLint config for @kiidbrian",
   "main": "index.js",
   "exports": {
@@ -31,7 +31,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-security": "^3.0.1",
-    "globals": "^16.10.0",
+    "globals": "^17.0.0",
     "prettier": "^3.7.4",
     "typescript-eslint": "^8.28.0"
   },
