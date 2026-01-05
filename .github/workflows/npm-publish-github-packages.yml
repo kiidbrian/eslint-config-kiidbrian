@@ -1,4 +1,4 @@
-name: Publish to NPM Packages
+name: Publish to npm
 
 on:
   release:
@@ -15,12 +15,9 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  publish-gpr:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,6 +25,6 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
