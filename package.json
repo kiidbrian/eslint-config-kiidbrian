@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-kiidbrian",
+  "name": "@kiidbrian/eslint-config",
   "version": "0.2.1",
   "description": "ESLint config for @kiidbrian",
   "main": "index.js",
