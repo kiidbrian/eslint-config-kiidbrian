@@ -1,4 +1,4 @@
-# ESLint Config Kiidbrian
+# @kiid_brian/eslint-config
 
 A comprehensive, flexible ESLint configuration package for TypeScript and JavaScript projects.
 
@@ -16,7 +16,7 @@ A comprehensive, flexible ESLint configuration package for TypeScript and JavaSc
 ## Installation
 
 ```bash
-npm install --save-dev eslint-config-kiidbrian
+npm install --save-dev @kiid_brian/eslint-config
 ```
 
 ### Peer Dependencies
@@ -45,7 +45,7 @@ npm install --save-dev \
 
 ```js
 // eslint.config.js
-import config from "eslint-config-kiidbrian";
+import config from "@kiid_brian/eslint-config";
 
 export default config;
 ```
@@ -54,7 +54,7 @@ export default config;
 
 ```js
 // eslint.config.js
-import {react} from "eslint-config-kiidbrian";
+import {react} from "@kiid_brian/eslint-config";
 
 export default react;
 ```
@@ -70,7 +70,7 @@ Available presets:
 
 ```js
 // eslint.config.js
-import reactConfig from "eslint-config-kiidbrian/configs/react.js";
+import reactConfig from "@kiid_brian/eslint-config/configs/react.js";
 
 export default reactConfig;
 ```
@@ -79,7 +79,7 @@ export default reactConfig;
 
 ```js
 // eslint.config.js
-import {createConfig} from "eslint-config-kiidbrian";
+import {createConfig} from "@kiid_brian/eslint-config";
 
 export default createConfig({
   preset: "base",
@@ -128,7 +128,7 @@ Custom ESLint configuration objects to merge with the preset.
 
 ```js
 // eslint.config.js
-import config from "eslint-config-kiidbrian";
+import config from "@kiid_brian/eslint-config";
 
 export default config;
 ```
@@ -137,7 +137,7 @@ export default config;
 
 ```js
 // eslint.config.js
-import {node} from "eslint-config-kiidbrian";
+import {node} from "@kiid_brian/eslint-config";
 
 export default node;
 ```
@@ -146,7 +146,7 @@ export default node;
 
 ```js
 // eslint.config.js
-import {strict} from "eslint-config-kiidbrian";
+import {strict} from "@kiid_brian/eslint-config";
 
 export default strict;
 ```
@@ -155,7 +155,7 @@ export default strict;
 
 ```js
 // eslint.config.js
-import {createConfig} from "eslint-config-kiidbrian";
+import {createConfig} from "@kiid_brian/eslint-config";
 
 export default createConfig({
   preset: "react",
@@ -167,7 +167,7 @@ export default createConfig({
 
 ```js
 // eslint.config.js
-import {createConfig} from "eslint-config-kiidbrian";
+import {createConfig} from "@kiid_brian/eslint-config";
 
 export default createConfig({
   preset: "base",
