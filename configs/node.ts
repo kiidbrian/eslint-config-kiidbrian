@@ -1,7 +1,8 @@
+import type {Linter} from "eslint";
 import globals from "globals";
 import baseConfig from "./base.js";
 
-export default [
+const nodeConfig: Linter.Config[] = [
   ...baseConfig,
 
   // Node.js-specific configuration
@@ -10,13 +11,14 @@ export default [
       globals: {
         ...globals.node,
         ...globals.es2021,
+        // Remove browser globals that aren't needed in Node.js
       },
     },
     rules: {
+      // Allow console in Node.js applications
       "no-console": "off",
-
-      // Node.js specific rules can be added here
-      // For example, you might want to enforce certain patterns
     },
   },
 ];
+
+export default nodeConfig;

@@ -1,6 +1,7 @@
+import type {Linter} from "eslint";
 import baseConfig from "./base.js";
 
-export default [
+const strictConfig: Linter.Config[] = [
   ...baseConfig,
 
   // Strict configuration overrides
@@ -27,3 +28,5 @@ export default [
     },
   },
 ];
+
+export default strictConfig;

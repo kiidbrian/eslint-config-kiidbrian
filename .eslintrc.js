@@ -1,13 +1,12 @@
-// Legacy ESLint config for linting this package itself
+// ESLint config for linting this package itself
 module.exports = {
-  extends: ["./index.js"],
+  extends: ["./dist/presets/minimal.js"],
   parserOptions: {
     project: false, // Disable type checking for the config package itself
   },
   rules: {
-    "jsdoc/require-description": "off", // Less strict for config files
-    "jsdoc/require-param": "off",
-    "jsdoc/require-returns": "off",
+    // Allow console in package development
+    "no-console": "off",
   },
-  ignorePatterns: ["node_modules/", "dist/"],
+  ignorePatterns: ["node_modules/", "dist/", "*.test.ts", "*.spec.ts"],
 };

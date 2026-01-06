@@ -1,6 +1,6 @@
 {
   "name": "@kiid_brian/eslint-config",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "description": "ESLint config for @kiid_brian",
   "keywords": [
     "eslint",
@@ -17,22 +17,44 @@
   "license": "MIT",
   "author": "Brian Paintsil",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./base": "./configs/base.js",
-    "./react": "./configs/react.js",
-    "./node": "./configs/node.js",
-    "./strict": "./configs/strict.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./minimal": {
+      "types": "./dist/presets/minimal.d.ts",
+      "import": "./dist/presets/minimal.js"
+    },
+    "./base": {
+      "types": "./dist/configs/base.d.ts",
+      "import": "./dist/configs/base.js"
+    },
+    "./react": {
+      "types": "./dist/configs/react.d.ts",
+      "import": "./dist/configs/react.js"
+    },
+    "./node": {
+      "types": "./dist/configs/node.d.ts",
+      "import": "./dist/configs/node.js"
+    },
+    "./strict": {
+      "types": "./dist/configs/strict.d.ts",
+      "import": "./dist/configs/strict.js"
+    }
   },
-  "main": "index.js",
   "files": [
-    "index.js",
-    "configs/"
+    "dist/"
   ],
   "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
-    "test": "node -e \"const fs = require('fs'); const path = require('path'); ['index.js', 'configs/base.js', 'configs/react.js', 'configs/node.js', 'configs/strict.js'].forEach(f => { if (fs.existsSync(f)) console.log('✅', f); else console.log('❌ Missing:', f); });\""
+    "test": "node -e \"const fs = require('fs'); const path = require('path'); ['index.ts', 'configs/base.ts', 'configs/react.ts', 'configs/node.ts', 'configs/strict.ts', 'presets/minimal.ts', 'types/index.ts', 'tsconfig.json'].forEach(f => { if (fs.existsSync(f)) console.log('✅', f); else console.log('❌ Missing:', f); });\""
   },
   "dependencies": {
     "acorn": "^8.15.0",
@@ -254,31 +276,46 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@types/node": "^22.5.4",
     "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-jsdoc": "^50.2.2",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-security": "^3.0.1",
     "globals": "^17.0.0",
-    "prettier": "^3.7.4",
-    "typescript-eslint": "^8.51.0"
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.51.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.7.4"
   },
   "peerDependencies": {
     "@eslint/js": "^9.22.0",
     "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-jsdoc": "^50.2.2",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-security": "^3.0.1",
     "globals": "^17.0.0",
-    "prettier": "^3.7.4",
     "typescript-eslint": "^8.28.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint-config-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-jsdoc": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-security": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=18.0.0"
